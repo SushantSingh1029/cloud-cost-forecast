@@ -11,9 +11,6 @@ The system predicts cloud infrastructure execution costs based on workload and r
 ## 🔗 Live Web Application
 https://cloud-cost-forecast.vercel.app/
 
-## 🔗 Live API
-https://cloud-cost-api.onrender.com
-
 ## 🔗 Swagger API Documentation
 https://cloud-cost-api.onrender.com/docs
 
