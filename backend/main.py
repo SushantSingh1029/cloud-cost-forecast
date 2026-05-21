@@ -2,13 +2,23 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import numpy as np
+from fastapi.middleware.cors import CORSMiddleware
+
+# Create FastAPI app
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load saved model and scaler
 model = joblib.load("models/svr_cloud_cost_model.pkl")
 scaler = joblib.load("models/scaler.pkl")
 
-# Create FastAPI app
-app = FastAPI()
 
 # Define request structure
 class CloudCostInput(BaseModel):
